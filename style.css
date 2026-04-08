@@ -1,0 +1,128 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #1e2a38;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+#score-board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+#status {
+  background-color: #2e8b57;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  grid-gap: 10px;
+  justify-content: center;
+}
+
+.card {
+  width: 120px;
+  height: 160px;
+  background-color: #fff;
+  border: 3px solid #333;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card.selected {
+  border-color: gold;
+  box-shadow: 0 0 10px gold;
+}
+
+.card.hint {
+  animation: blink 0.8s ease-in-out 3;
+}
+
+@keyframes blink {
+  0%, 100% { border-color: #333; }
+  50% { border-color: yellow; box-shadow: 0 0 10px yellow; }
+}
+
+.shape {
+  width: 60px;
+  height: 40px;
+  margin: 5px auto;
+}
+
+/* 색상 */
+.red { color: #d32f2f; background-color: #d32f2f; }
+.green { color: #388e3c; background-color: #388e3c; }
+.blue { color: #1976d2; background-color: #1976d2; }
+
+/* 채움 스타일 */
+/* 채움 스타일 */
+.solid {
+  background-color: currentColor;
+}
+
+.striped {
+  background-color: transparent;
+  background-image: repeating-linear-gradient(
+    45deg,
+    currentColor,
+    currentColor 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  border: 2px solid currentColor;
+}
+
+.empty {
+  background-color: transparent;
+  border: 3px solid currentColor;
+}
+
+/* 모양 정의 */
+.oval {
+  border-radius: 50% / 50%;
+}
+
+.diamond {
+  background-color: currentColor;
+  clip-path: polygon(
+    50% 25%, 100% 50%, 50% 75%, 0% 50%
+  );
+}
+
+.squiggle {
+  width: 70px;
+  height: 30px;
+  background-color: currentColor;
+  border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
+  transform: rotate(-10deg);
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #0078d7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
